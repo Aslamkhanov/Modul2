@@ -16,7 +16,6 @@ public class Runner {
         for (HashMap.Entry<String, BigDecimal> entry : result.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
         }
-
     }
 
     public static void ex1() {
@@ -68,12 +67,12 @@ public class Runner {
                 String[] parts = line.split(";");
                 BigDecimal weight = new BigDecimal(Integer.parseInt(parts[1].trim()));
 
-                if (weight.compareTo(BigDecimal.valueOf(5)) <= 0) {
+                if (weight.compareTo(BigDecimal.valueOf(5)) < 0) {
                     categories.put("легкий", categories.get("легкий").add(weight));
-                } else if (weight.compareTo(BigDecimal.valueOf(5)) > 0 &&
-                        weight.compareTo(BigDecimal.valueOf(10)) <= 0) {
+                } else if (weight.compareTo(BigDecimal.valueOf(5)) >= 0 &&
+                        weight.compareTo(BigDecimal.valueOf(10)) < 0) {
                     categories.put("средний", categories.get("средний").add(weight));
-                } else if (weight.compareTo(BigDecimal.valueOf(10)) > 0) {
+                } else if (weight.compareTo(BigDecimal.valueOf(10)) >= 0) {
                     categories.put("тяжелый", categories.get("тяжелый").add(weight));
                 }
             }
