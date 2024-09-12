@@ -11,7 +11,9 @@ public class Runner {
 
     public static void main(String[] args) {
         ex1();
+
         System.out.println("--------------------------");
+
         HashMap<String, BigDecimal> result = ex2();
         for (HashMap.Entry<String, BigDecimal> entry : result.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
@@ -45,7 +47,8 @@ public class Runner {
 
     private static void luggageBatch(LinkedList<String> batch) {
         for (String numberLuggage : batch) {
-            System.out.println(count++ + " - " + numberLuggage + " выдан");
+            System.out.println(numberLuggage + " - выдан");
+            //System.out.println(count++ + " - " + numberLuggage + " выдан"); красивый вариант
         }
     }
 
