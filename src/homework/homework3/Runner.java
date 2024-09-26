@@ -52,8 +52,8 @@ public class Runner {
     }
 
     public static void ex3() {
-        Burning<Uranium> nuclearReactor = (Uranium uranium) -> System.out.println("зеленый свет вокруг!");
-        Burning<Tree> bonfire = (Tree tree) -> System.out.println("желто-красный свет вокруг!");
+        Burning<Uranium> nuclearReactor = uranium -> System.out.println("зеленый свет вокруг!");
+        Burning<Tree> bonfire = tree -> System.out.println("желто-красный свет вокруг!");
     }
 
     public static void ex4() {
@@ -61,8 +61,8 @@ public class Runner {
         Boat boat1 = new Boat(7);
         Animal animal1 = new Animal(2, 5);
 
-        Ruler<Boat> boatMeter = (Boat boat) -> boat.getLength();
-        Ruler<Animal> animalMeter = (Animal animal) -> animal.getBodyLength() + animal.getTailLength();
+        Ruler<Boat> boatMeter = boat -> boat.getLength();
+        Ruler<Animal> animalMeter = animal -> animal.getBodyLength() + animal.getTailLength();
 
         System.out.println("Длина лодки: " + boatMeter.rule(boat1));
         System.out.println("Длина тела и хвоста животного: " + animalMeter.rule(animal1));
